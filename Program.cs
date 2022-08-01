@@ -14,19 +14,17 @@ namespace Chess
             while (!gameIsOver())
             {
                 Console.WriteLine();
-                PlayersPlay(p1, p2);
+                PlayersPlay(p1, p2, CB);
                 CB.Show();
-
-
-                //CB.MovePiece(new Position(7,0), new Position(3,3));
-
+                Console.ReadKey();
             }
             
         }
 
-        private static void PlayersPlay(Player p1, Player p2)
+        private static void PlayersPlay(Player p1, Player p2, ChessBoard CB)
         {
-            Console.ReadKey();
+            CB.MovePiece(new Position(1, 1), new Position(3, 1));
+            CB.MovePiece(new Position(6, 1), new Position(4, 1));
         }
 
         private static bool gameIsOver()

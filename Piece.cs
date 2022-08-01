@@ -3,7 +3,7 @@ namespace Chess
 {
     public abstract class Piece
     {
-        protected Position pos { get; set; }
+        protected Position pos;
         protected Color c { get; set; }
 
         protected Piece(Position pos, Color c)
@@ -12,10 +12,16 @@ namespace Chess
             this.c = c;
         }
 
-        public virtual String toString(){
+        public virtual bool isMovable(Position to)
+        {
+            return false; 
+        }
+
+        public virtual String toString()
+        {
             return "X";
         }
     }
 
-    
+
 }
