@@ -52,27 +52,43 @@ namespace Chess
         public void Show() {
             for (int i = COLUMN-1; i > -1; i--)
             {
+                Console.WriteLine();
+                Console.Write((i + 1) + "   ");
                 for (int j = 0; j < LINE; j++)
                 {
                     if (board[i, j] == null) {
                         Console.Write("- ");//if the cell is empty
                     }
                     else {
-                        Console.Write(board[i, j].toString() + " ");
+                        Console.Write(board[i, j].ToString() + " ");
                     }
-
                 }
-                Console.WriteLine(" "+(i+1));
             }
 
-
-            Console.WriteLine();
+            Console.WriteLine("\n");
+            Console.Write("    ");
             for (int i = 0; i < LINE; i++)
             {
                 
-                Console.Write((i + 1)+" ");
+                Console.Write(toAlphabet(i)+" ");
+            }     
+            Console.WriteLine("\n_________________________________________________________________________________________________________");
+        }
+
+        private string toAlphabet(int v)
+        {
+            switch (v)
+            {
+                case 0: return "A";
+                case 1: return "B";
+                case 2: return "C";
+                case 3: return "D";
+                case 4: return "E";
+                case 5: return "F";
+                case 6: return "G";
+                case 7: return "H";
+                default: return v.ToString();
             }
-            Console.WriteLine();
         }
 
         public void MovePiece(Position from, Position to)
@@ -81,6 +97,7 @@ namespace Chess
             {
                 if (!isEmpty(from) && getPiece(from).isMovable(to))
                 {
+                    board[from.X, from.Y].Pos = to;
                     board[to.X, to.Y] = board[from.X, from.Y];
                     board[from.X, from.Y] = null;
                 }

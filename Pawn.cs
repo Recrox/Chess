@@ -3,32 +3,34 @@ namespace Chess
     public class Pawn:Piece
     {
         bool hasMoved = false;
-        private int direction;// -1 is for white , 1 is for black
+        private int Direction;// 1 is for white , -1 is for black
 
         public Pawn(Position pos, Color c) : base(pos, c)
         {
-            if (c == Color.WHITE) { direction = 1;}
-            else if(c == Color.BLACK){ direction = -1;}
+            if (c == Color.WHITE) { Direction = 1;}
+            else if(c == Color.BLACK){ Direction = -1;}
         }
 
-        public override String toString(){
-            if(this.c == Color.WHITE){
+        public override string? ToString()
+        {
+            if (this.C == Color.WHITE)
+            {
                 return "P";//https://fr.wikipedia.org/wiki/Symboles_d%27%C3%A9checs_en_Unicode
             }
-            else{
-                return "P";//https://fr.wikipedia.org/wiki/Symboles_d%27%C3%A9checs_en_Unicode
+            else
+            {
+                return "P";
             }
-            
         }
 
         public override bool isMovable(Position to)
         {
-            if (!this.hasMoved && (to.X - this.pos.X == 2*direction || to.X - this.pos.X == 1*direction && to.Y == this.pos.Y))
+            if (!this.hasMoved && (to.X - this.pos.X == 2*Direction || to.X - this.pos.X == 1*Direction && to.Y == this.pos.Y))
             {
                 this.hasMoved = true;
                 return true;
             }
-            else if (to.X - this.pos.X == 1*direction && to.Y == this.pos.Y)
+            else if (to.X - this.pos.X == 1*Direction && to.Y == this.pos.Y)
             {
                 return true;
             }

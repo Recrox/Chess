@@ -6,16 +6,24 @@ namespace Chess
         {
         }
 
-        public override string toString()
+        public override bool isMovable(Position to)
         {
-            if(this.c == Color.WHITE){
+            if(Math.Abs(to.X - this.pos.X) == 2 && Math.Abs(to.Y - this.pos.Y) == 1
+            || Math.Abs(to.X - this.pos.X) == 1 && Math.Abs(to.Y - this.pos.Y) == 2) 
+            {return true;}
+            else return false;
+
+        }
+        public override string? ToString()
+        {
+            if (this.C == Color.WHITE)
+            {
                 return "H";//https://fr.wikipedia.org/wiki/Symboles_d%27%C3%A9checs_en_Unicode
             }
             else
             {
                 return "H";
             }
-            
         }
     }
 }

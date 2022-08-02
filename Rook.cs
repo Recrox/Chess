@@ -6,9 +6,17 @@ namespace Chess
         {
         }
 
-        public override string toString()
+        public override bool isMovable(Position to)
         {
-            if(this.c == Color.WHITE){
+            if(to.X - this.pos.X == 0 
+            || to.Y - this.pos.Y == 0) { return true; }
+            return false;
+        }
+
+        public override string? ToString()
+        {
+            if (this.C == Color.WHITE)
+            {
                 return "R";//https://fr.wikipedia.org/wiki/Symboles_d%27%C3%A9checs_en_Unicode
             }
             else

@@ -6,9 +6,10 @@ namespace Chess
         {
         }
 
-        public override string toString()
+        public override string? ToString()
         {
-            if(this.c == Color.WHITE){
+            if (this.C == Color.WHITE)
+            {
                 return "K";//https://fr.wikipedia.org/wiki/Symboles_d%27%C3%A9checs_en_Unicode
             }
             else
