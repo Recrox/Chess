@@ -50,11 +50,11 @@ namespace Chess
         }
 
         public void Show() {
-            for (int i = COLUMN-1; i > -1; i--)
+            for (int i = LINE-1; i > -1; i--)
             {
                 Console.WriteLine();
                 Console.Write((i + 1) + "   ");
-                for (int j = 0; j < LINE; j++)
+                for (int j = 0; j < COLUMN; j++)
                 {
                     if (board[i, j] == null) {
                         Console.Write("- ");//if the cell is empty
@@ -97,10 +97,18 @@ namespace Chess
             {
                 if (!isEmpty(from) && getPiece(from).isMovable(to))
                 {
-                    board[from.X, from.Y].Pos = to;
-                    board[to.X, to.Y] = board[from.X, from.Y];
+                    getPiece(from).Pos = to;
+                    board[to.X, to.Y] = getPiece(from);
                     board[from.X, from.Y] = null;
                 }
+                else
+                {
+                    Console.WriteLine("you try to move nothing, or your piece is not able to move there, or there is a piece in the trajectory, or your piece is nailed.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Wrong position");
             }
         }
 

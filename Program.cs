@@ -23,6 +23,9 @@ namespace Chess
         private static void PlayersPlay(Player p1, Player p2, ChessBoard CB)
         {
             Console.ReadKey();
+
+            CB.MovePiece(new Position("D", 2), new Position("D", 4));
+            /*
             //pawn
             CB.MovePiece(new Position(1, 1), new Position(2, 1));
             CB.MovePiece(new Position(2, 1), new Position(3, 1));
@@ -44,6 +47,10 @@ namespace Chess
             //queen
             CB.MovePiece(new Position(0, 3), new Position(4, 3));
             CB.MovePiece(new Position(7, 3), new Position(4, 0));
+            */
+
+            CB.MovePiece(new Position("E", 1), new Position("E", 2));
+            CB.MovePiece(new Position("E", 2), new Position("D", 3));
         }
 
         private static bool gameIsOver()

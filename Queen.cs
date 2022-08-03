@@ -10,7 +10,7 @@
         {
             if (Math.Abs(to.X - this.pos.X) == Math.Abs(to.Y - this.pos.Y)//diagonales like bishop
             || to.X - this.pos.X == 0 //line like rook
-            || to.Y - this.pos.Y == 0) { return true; }
+            || to.Y - this.pos.Y == 0) return true;
             return false;
         }
         public override string? ToString()

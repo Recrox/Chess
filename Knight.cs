@@ -9,9 +9,8 @@ namespace Chess
         public override bool isMovable(Position to)
         {
             if(Math.Abs(to.X - this.pos.X) == 2 && Math.Abs(to.Y - this.pos.Y) == 1
-            || Math.Abs(to.X - this.pos.X) == 1 && Math.Abs(to.Y - this.pos.Y) == 2) 
-            {return true;}
-            else return false;
+            || Math.Abs(to.X - this.pos.X) == 1 && Math.Abs(to.Y - this.pos.Y) == 2) return true;
+            return false;
 
         }
         public override string? ToString()
