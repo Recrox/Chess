@@ -21,7 +21,17 @@ namespace Chess
 
         public override bool isMovable(Position to)
         {
-            if (Math.Abs(to.X - this.pos.X)  == Math.Abs(to.Y - this.pos.Y)) return true;
+            if (DeltaX(to) == DeltaY(to)
+                && theWayIsFree(to)) return true;
+            return false;
+        }
+
+        private bool theWayIsFree(Position to)
+        {
+            for (int i = 0; i < to.X; i++)
+            {
+
+            }
             return false;
         }
     }

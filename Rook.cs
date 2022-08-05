@@ -8,8 +8,8 @@ namespace Chess
 
         public override bool isMovable(Position to)
         {
-            if(to.X - this.pos.X == 0 
-            || to.Y - this.pos.Y == 0) return true; 
+            if(DeltaX(to) == 0 
+            || DeltaY(to) == 0) return true; 
             return false;
         }
 

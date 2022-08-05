@@ -25,16 +25,17 @@ namespace Chess
             Console.ReadKey();
 
             CB.MovePiece(new Position("D", 2), new Position("D", 4));
-            /*
+            
             //pawn
             CB.MovePiece(new Position(1, 1), new Position(2, 1));
             CB.MovePiece(new Position(2, 1), new Position(3, 1));
+            CB.MovePiece(new Position("B", 7), new Position("B", 6));
 
             //bishop
             CB.MovePiece(new Position(0, 2), new Position(3, 5));
             CB.MovePiece(new Position(3, 5), new Position(4, 4));
             CB.MovePiece(new Position(7, 2), new Position(5, 0));
-
+            
             //knight
             CB.MovePiece(new Position(0, 1), new Position(2, 2));
             CB.MovePiece(new Position(2, 2), new Position(3, 4));
@@ -47,10 +48,11 @@ namespace Chess
             //queen
             CB.MovePiece(new Position(0, 3), new Position(4, 3));
             CB.MovePiece(new Position(7, 3), new Position(4, 0));
-            */
+            
 
             CB.MovePiece(new Position("E", 1), new Position("E", 2));
             CB.MovePiece(new Position("E", 2), new Position("D", 3));
+            
         }
 
         private static bool gameIsOver()

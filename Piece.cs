@@ -17,6 +17,16 @@ namespace Chess
         {
             return false; 
         }
+
+        public int DeltaX(Position pos)
+        {
+            return Math.Abs(pos.X - this.pos.X);
+        }
+
+        public int DeltaY(Position pos)
+        {
+            return Math.Abs(pos.Y - this.pos.Y);
+        }
     }
 
 
