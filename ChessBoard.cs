@@ -111,7 +111,16 @@ namespace Chess
                 Console.WriteLine("Wrong position");
             }
         }
+        /*
+        private bool theWayIsFree(Position to)
+        {
+            for (int i = 0; i < Piece.DeltaX(to); i++)
+            {
 
+            }
+            return false;
+        }
+        */
         private Piece getPiece(Position pos)
         {
             return this.board[pos.X, pos.Y];
